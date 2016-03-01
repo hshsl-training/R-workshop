@@ -1,0 +1,9 @@
+external stuffs I want to incorporate
+
+- a knitted pdf of our code exercizes
+- a pdf of the handout
+- an excel file that gets saved as csv and then read into R
+  - then look at the `xlsx` package and the `foreign` package which reads SPSS, SAS, and Stata files
+
+- browse a package manual to find how to use it
+- write a file

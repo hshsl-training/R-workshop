@@ -1,0 +1,53 @@
+# Outline
+
+Title
+
+Scope of workshop
+
+Basic syntax
+
+Basic data types
+  number
+  string
+
+Gotchas
+  variable names can only contain letter, underscore, period, number
+  variable names can only start with letter, uderscore, period
+  casesensitive
+  
+
+Arithmatic
+  add
+  sub
+  mul
+  div
+
+
+Read data
+
+
+Helpful intro commands
+  data() - list all builtin datasets
+  data(package = .packages(all.available = TRUE)) - list all datasets builtin to all installed packages
+  library() - list all installed packages
+  help.start() - reference manuals
+
+
+Recommended starting points for different needs
+
+  data wrangling
+    dplyr
+    tidyr 
+    data.table
+
+  stats
+    stats
+    car
+    sandwhich
+
+  graphics
+    ggplot2
+    dygraphs
+    googleVis
+
+
