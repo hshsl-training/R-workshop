@@ -1,0 +1,87 @@
+---
+
+---
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="https://npmcdn.com/basscss@7.1.1/css/basscss.min.css">
+    <title>{{ site.title }}</title>
+    <meta name="description" content="">
+    <meta name="author" content="Brian Zelip">
+    <meta name="keywords" content="">
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+    <style>
+
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <h1>{{ site.title }}</h1>
+      <hr>
+
+      <h2>Section 1, visualizing data using ggplot2</h2>
+
+      <ol>
+        {% for command in site.data.viz %}
+        <li class="mb4">
+          <p>{{ command.desc }}</p>
+          <div class="flex flex-center">
+            <button data-clipboard-target="#v-{{ command.id }}" class="btn btn-outline mr2" title="click to copy code">
+              <img src="img/clippy.svg" width="15" alt="clipboard"/>
+            </button>
+            <code id="v-{{ command.id }}" class="inline-block px2 bg-silver" style="width: 650px; padding-top: 1rem;"><pre>{{ command.code }}</pre></code>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+
+      <hr>
+
+      <h2 class="mt3">Section 2, statistical analyses</h2>
+
+      <ol>
+        {% for command in site.data.stats %}
+        <li class="mb4">
+          <p>{{ command.desc }}</p>
+          <div class="flex flex-center">
+            <button data-clipboard-target="#s-{{ command.id }}" class="btn btn-outline mr2" title="click to copy code">
+              <img src="img/clippy.svg" width="15" alt="clipboard"/>
+            </button>
+            <code id="s-{{ command.id }}" class="inline-block px2 bg-silver" style="width: 650px; padding-top: 1rem;"><pre>{{ command.code }}</pre></code>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+
+      <hr>
+
+      <h2 class="mt3">Section 3, load non R data</h2>
+
+      <ol>
+        {% for command in site.data.load %}
+        <li class="mb4">
+          <p>{{ command.desc }}</p>
+          <div class="flex flex-center">
+            <button data-clipboard-target="#l-{{ command.id }}" class="btn btn-outline mr2" title="click to copy code">
+              <img src="img/clippy.svg" width="15" alt="clipboard"/>
+            </button>
+            <code id="l-{{ command.id }}" class="inline-block px2 bg-silver" style="width: 650px; padding-top: 1rem;"><pre>{{ command.code }}</pre></code>
+          </div>
+        </li>
+        {% endfor %}
+      </ol>
+
+    </div>
+
+    {% include clippy.html %}
+
+  </body>
+
+</html>

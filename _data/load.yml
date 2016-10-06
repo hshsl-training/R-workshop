@@ -1,0 +1,36 @@
+- id: 1
+  desc: 'Excel<br>install the gdata library'
+  code: 'install.packages("gdata")'
+- id: 2
+  desc: 'load gdata library'
+  code: 'library("gdata")'
+- id: 3
+  desc: 'show documentation for reading Excel with foreign library'
+  code: 'help(read.xls)'
+- id: 4
+  desc: 'read first worksheet of Excel file into variable excelData'
+  code: 'excelData <- read.xls("Desktop/data.xlsx")'
+- id: 5
+  desc: 'view excelData'
+  code: 'View(excelData)'
+- id: 6
+  desc: 'SPSS data<br>load the built-in foreign library'
+  code: 'library(foreign)'
+- id: 7
+  desc: 'show documentation for reading SPSS with foreign library'
+  code: 'help(read.spss)'
+- id: 8
+  desc: 'load SPSS file into SPSSdata variable'
+  code: 'SPSSdata = read.spss("Downloads/Robbery Incident.sav", to.data.frame=TRUE)'
+- id: 9
+  desc: 'view SPSSdata'
+  code: 'View(SPSSdata)'
+- id: 10
+  desc: 'CSV data from web<br>show documentation for reading table data with the built-in read.csv function'
+  code: 'help(read.csv)'
+- id: 11
+  desc: 'load online csv file into webCSV variable<br>lets find a CSV file online together and copy the URL to the command below'
+  code: 'webCSV <- read.csv("https://raw.githubusercontent.com/BobAdamsEE/SouthParkData/master/Season-11.csv")'
+- id: 12
+  desc: 'view webCSV'
+  code: 'View(webCSV)'

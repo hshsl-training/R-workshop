@@ -1,0 +1,7 @@
+# Site settings
+title: HS/HSL R Workshop Live Code
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+exclude: [_site, .gitignore]

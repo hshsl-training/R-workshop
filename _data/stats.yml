@@ -1,0 +1,96 @@
+- id: 1
+  desc: 'load the dataset called mtcars into your current workspace (it comes with R by default)'
+  code: 'data("mtcars")'
+- id: 2
+  desc: 'show the first few lines of mtcars data'
+  code: 'head(mtcars)'
+- id: 3
+  desc: 'view the mtcars data'
+  code: 'View(mtcars)'
+- id: 4
+  desc: 'show the documentation for the mtcars data'
+  code: 'help(mtcars)'
+- id: 5
+  desc: 'summarize the mtcars data'
+  code: 'summary(mtcars)'
+- id: 6
+  desc: 'access a single column of data, the mpg column'
+  code: 'mtcars$mpg'
+- id: 7
+  desc: 'access a single column of data, the wt column'
+  code: 'mtcars$wt'
+- id: 8
+  desc: 'perform a T-test comparing two variables<br>the tilde "~" means "explained by", so the following tests for an explanation of mpg by the car transmission type'
+  code: 't.test(mpg ~ am, data=mtcars)'
+- id: 9
+  desc: 'assign the T-test result into a variable'
+  code: 'tt = t.test(mpg ~ am, data=mtcars)'
+- id: 10
+  desc: 'show the T-test on demand'
+  code: 'tt'
+- id: 11
+  desc: 'extract only the p-value'
+  code: 'tt$p.value'
+- id: 12
+  desc: 'extract only the confidence interval'
+  code: 'tt$conf.int'
+- id: 13
+  desc: 'perform a correlation test over two variables, mpg and wt'
+  code: 'cor.test(mtcars$mpg, mtcars$wt)'
+- id: 14
+  desc: 'assign the correlation test result into a variable'
+  code: 'ct = cor.test(mtcars$mpg, mtcars$wt)'
+- id: 15
+  desc: 'show the correlation test on demand'
+  code: 'ct'
+- id: 16
+  desc: 'extract only the p-value'
+  code: 'ct$p.value'
+- id: 17
+  desc: 'extract only the estimate'
+  code: 'ct$estimate'
+- id: 18
+  desc: 'extract only the confidence interval'
+  code: 'ct$conf.int'
+- id: 19
+  desc: 'create a linear model showing mpg explained by wt'
+  code: 'fit = lm(mpg ~ wt, mtcars)'
+- id: 20
+  desc: 'summarize the fit'
+  code: 'summary(fit)'
+- id: 21
+  desc: 'extract the matrix of coefficients'
+  code: 'coef(summary(fit))'
+- id: 22
+  desc: 'extract just the estimates of the matrix'
+  code: 'co = coef(summary(fit))'
+- id: 23
+  desc: 'get the first column'
+  code: 'co[, 1]'
+- id: 24
+  desc: 'get the fourth column'
+  code: 'co[, 4]'
+- id: 25
+  desc: 'use the predict function for our existing cars'
+  code: 'predict(fit)'
+- id: 26
+  desc: 'predict for a car at 4500 pounds<br>summarize the fit'
+  code: 'summary(fit)'
+- id: 27
+  desc: 'add together the intercept term (37.2851) and the weight coefficient<br>(-5.3445) times our new weight, which is 4.5 thousands of pounds'
+  code: '37.2851 + (-5.3445) * 4.5'
+- id: 28
+  desc: 'use the built in predict function to get same answer as above<br>create a data frame containing the predictors we wish to use (4500 lbs)'
+  code: 'newcar = data.frame(wt=4.5)'
+- id: 29
+  desc: 'pass the predict function the new data frame'
+  code: 'predict(fit, newcar)'
+- id: 30
+  desc: 'plot out the linear model with a smoothing curve'
+  code: 'plot12 <- ggplot(mtcars, aes(wt, mpg)) + geom_point() + geom_smooth(method="lm") + ggtitle("Linear model of the relationship between a car weight and efficiency")'
+- id: 31
+  desc: 'show plot'
+  code: 'plot12'
+- id: 32
+  desc: 'save the plot as a .png in your current working directory'
+  code: 'ggsave(filename="cars.png", plot12)'
