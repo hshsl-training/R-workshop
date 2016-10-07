@@ -13,7 +13,7 @@ title: stats
       <button data-clipboard-target="#s-{{ command.id }}" class="btn btn-outline mr2" title="click to copy code">
         <img src="img/clippy.svg" width="15" alt="clipboard"/>
       </button>
-      <code id="s-{{ command.id }}" class="prettyprint lang-r inline-block px2 bg-silver" style="width: 650px; padding-top: 1rem;"><pre>{{ command.code }}</pre></code>
+      <code id="s-{{ command.id }}" class="prettyprint lang-r px2 bg-silver overflow-scroll" style="width: 650px; padding-top: 1rem; width: 100%"><pre>{{ command.code }}</pre></code>
     </div>
   </li>
   {% endfor %}
