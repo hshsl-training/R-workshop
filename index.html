@@ -1,3 +1,20 @@
 ---
 layout: default
+name: visual
 ---
+
+<h2>Visualizing a built-in data set</h2>
+
+<ol>
+  {% for command in site.data.viz %}
+  <li class="mb4">
+    <p>{{ command.desc }}</p>
+    <div class="flex flex-center">
+      <button data-clipboard-target="#v-{{ command.id }}" class="btn btn-outline mr2" title="click to copy code">
+        <img src="img/clippy.svg" width="15" alt="clipboard"/>
+      </button>
+      <code id="v-{{ command.id }}" class="prettyprint lang-r inline-block px2 bg-silver" style="width: 650px; padding-top: 1rem;"><pre>{{ command.code }}</pre></code>
+    </div>
+  </li>
+  {% endfor %}
+</ol>

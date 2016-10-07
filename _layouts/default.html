@@ -1,6 +1,3 @@
----
-
----
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -15,7 +12,11 @@
     <meta name="keywords" content="">
     <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
     <style>
-
+      .hover-blue:hover {
+        background-color: #0074d9;
+        color: white;
+      }
+      .hover-text-decoration-none:hover { text-decoration: none; }
     </style>
   </head>
 
@@ -24,63 +25,21 @@
     <div class="container">
 
       <h1>{{ site.title }}</h1>
+      <nav class="flex center bg-silver rounded">
+        <a href="" class="flex-auto py1 hover-text-decoration-none rounded-left {% if page.name == "visual" %}bg-blue white{% else %}hover-blue{% endif %}">Visual</a>
+        <a href="" class="flex-auto py1 hover-text-decoration-none {% if page.name == "stats" %}bg-blue white{% else %}hover-blue{% endif %}">Statistical</a>
+        <a href="" class="flex-auto py1 hover-text-decoration-none rounded-right {% if page.name == "load" %}bg-blue white{% else %}hover-blue{% endif %}">Load External Data</a>
+      </nav>
       <hr>
 
-      <h2>Section 1, visualizing data using ggplot2</h2>
-
-      <ol>
-        {% for command in site.data.viz %}
-        <li class="mb4">
-          <p>{{ command.desc }}</p>
-          <div class="flex flex-center">
-            <button data-clipboard-target="#v-{{ command.id }}" class="btn btn-outline mr2" title="click to copy code">
-              <img src="img/clippy.svg" width="15" alt="clipboard"/>
-            </button>
-            <code id="v-{{ command.id }}" class="inline-block px2 bg-silver" style="width: 650px; padding-top: 1rem;"><pre>{{ command.code }}</pre></code>
-          </div>
-        </li>
-        {% endfor %}
-      </ol>
-
-      <hr>
-
-      <h2 class="mt3">Section 2, statistical analyses</h2>
-
-      <ol>
-        {% for command in site.data.stats %}
-        <li class="mb4">
-          <p>{{ command.desc }}</p>
-          <div class="flex flex-center">
-            <button data-clipboard-target="#s-{{ command.id }}" class="btn btn-outline mr2" title="click to copy code">
-              <img src="img/clippy.svg" width="15" alt="clipboard"/>
-            </button>
-            <code id="s-{{ command.id }}" class="inline-block px2 bg-silver" style="width: 650px; padding-top: 1rem;"><pre>{{ command.code }}</pre></code>
-          </div>
-        </li>
-        {% endfor %}
-      </ol>
-
-      <hr>
-
-      <h2 class="mt3">Section 3, load non R data</h2>
-
-      <ol>
-        {% for command in site.data.load %}
-        <li class="mb4">
-          <p>{{ command.desc }}</p>
-          <div class="flex flex-center">
-            <button data-clipboard-target="#l-{{ command.id }}" class="btn btn-outline mr2" title="click to copy code">
-              <img src="img/clippy.svg" width="15" alt="clipboard"/>
-            </button>
-            <code id="l-{{ command.id }}" class="inline-block px2 bg-silver" style="width: 650px; padding-top: 1rem;"><pre>{{ command.code }}</pre></code>
-          </div>
-        </li>
-        {% endfor %}
-      </ol>
+      {{ content }}
 
     </div>
 
     {% include clippy.html %}
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="js/lang-r.js"></script>
+    <script>prettyPrint();</script>
 
   </body>
 
