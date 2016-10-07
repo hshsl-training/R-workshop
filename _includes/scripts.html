@@ -1,0 +1,13 @@
+<script src="js/clipboard.min.js"></script>
+    <script src="js/run_prettify.js"></script>
+    <script src="js/lang-r.js"></script>
+    <script>prettyPrint();</script>
+    <script>
+      var clipboard = new Clipboard('button');
+      clipboard.on('success', function(e) {
+          console.log(e);
+      });
+      clipboard.on('error', function(e) {
+          console.log(e);
+      });
+    </script>

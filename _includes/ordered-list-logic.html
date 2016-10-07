@@ -1,0 +1,15 @@
+<ol class="p0">
+        {% if page.title == "visual" %}
+        {% for command in site.data.r.visual %}
+        {% include ordered-list-item.html %}
+        {% endfor %}
+        {% elsif page.title == 'stats' %}
+        {% for command in site.data.r.stats %}
+        {% include ordered-list-item.html %}
+        {% endfor %}
+        {% elsif page.title == 'load' %}
+        {% for command in site.data.r.load %}
+        {% include ordered-list-item.html %}
+        {% endfor %}
+        {% endif %}
+      </ol>

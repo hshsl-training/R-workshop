@@ -1,0 +1,273 @@
+'visual':
+  - id: 100
+    desc: 'get working directory for current project'
+    code: 'getwd()'
+  - id: 101
+    desc: 'set working directory for current project<br>(put your cursor between the two quotes below and press the "tab" key)'
+    code: 'setwd(dir = "")'
+  - id: 102
+    desc: 'list the files in your working directory'
+    code: 'list.files()'
+  - id: 1
+    desc: 'install ggplot2'
+    code: 'install.packages("ggplot2")'
+  - id: 2
+    desc: 'load ggplot2 into the current workspace'
+    code: 'library(ggplot2)'
+  - id: 3
+    desc: 'load the diamonds dataset into the current workspace'
+    code: 'data(diamonds)'
+  - id: 4
+    desc: 'show the first few lines of diamonds data'
+    code: 'head(diamonds)'
+  - id: 5
+    desc: 'view the diamonds data'
+    code: 'View(diamonds)'
+  - id: 6
+    desc: 'show the documentation for the diamonds data'
+    code: 'help(diamonds)'
+  - id: 7
+    desc: 'summarize the diamonds data'
+    code: 'summary(diamonds)'
+  - id: 8
+    desc: 'use ggplot2 to show the distribution of diamond clarity types'
+    code: 'bar1 <- ggplot(diamonds, aes(x=clarity)) + geom_bar() + labs(title="Counts of diamond clarities")'
+  - id: 9
+    desc: 'show plot'
+    code: 'bar1'
+  - id: 10
+    desc: 'plot the amount of each type of diamond cut within each type of diamond clarity'
+    code: 'bar2 <- ggplot(diamonds, aes(x=clarity, fill=cut)) + geom_bar() + labs(title="Counts of diamond clarities filled by cut count")'
+  - id: 11
+    desc: 'show plot'
+    code: 'bar2'
+  - id: 12
+    desc: 'create a scatterplot showing the relationship between a diamonds weight and price'
+    code: 'plot1 <- ggplot(diamonds, aes(x=carat, y=price)) + geom_point()'
+  - id: 13
+    desc: 'show plot'
+    code: 'plot1'
+  - id: 14
+    desc: 'use the color of each dot to show a third variable, diamond clarity'
+    code: 'plot2 <- ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point()'
+  - id: 15
+    desc: 'show plot'
+    code: 'plot2'
+  - id: 16
+    desc: 'replace the third variable with color'
+    code: 'plot3 <- ggplot(diamonds, aes(x=carat, y=price, color=color)) + geom_point()'
+  - id: 17
+    desc: 'show plot'
+    code: 'plot3'
+  - id: 18
+    desc: 'use the size of each dot to plot a fourth variable, diamond cut'
+    code: 'plot4 <- ggplot(diamonds, aes(x=carat, y=price, color=clarity, size=cut)) + geom_point()'
+  - id: 19
+    desc: 'show plot'
+    code: 'plot4'
+  - id: 20
+    desc: 'or use the shape of each dot to plot a fourth variable'
+    code: 'plot5 <- ggplot(diamonds, aes(x=carat, y=price, color=clarity, shape=cut)) + geom_point()'
+  - id: 21
+    desc: 'show plot'
+    code: 'plot5'
+  - id: 22
+    desc: 'show a smoothing trend of the relationship between two variables'
+    code: 'plot6 <- ggplot(diamonds, aes(x=carat, y=price)) + geom_point() + geom_smooth()'
+  - id: 23
+    desc: 'show plot'
+    code: 'plot6'
+  - id: 24
+    desc: 'remove the confidence interval'
+    code: 'plot7 <- ggplot(diamonds, aes(x=carat, y=price)) + geom_point() + geom_smooth(se=FALSE)'
+  - id: 25
+    desc: 'show plot'
+    code: 'plot7'
+  - id: 26
+    desc: 'show the linear model instead of the curve'
+    code: 'plot8 <- ggplot(diamonds, aes(x=carat, y=price)) + geom_point() + geom_smooth(se=FALSE, method="lm")'
+  - id: 27
+    desc: 'show plot'
+    code: 'plot8'
+  - id: 28
+    desc: 'add a third variable to create smoothing curves for each category of the new variable'
+    code: 'plot9 <- ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_point() + geom_smooth(se=FALSE)'
+  - id: 29
+    desc: 'show plot'
+    code: 'plot9'
+  - id: 30
+    desc: 'show only the layer of the different smoothing curves'
+    code: 'plot10 <- ggplot(diamonds, aes(x=carat, y=price, color=clarity)) + geom_smooth(se=FALSE)'
+  - id: 31
+    desc: 'show plot'
+    code: 'plot10'
+  - id: 32
+    desc: 'facet three variables over the different categories of a fourth variable, start with three variables'
+    code: 'plot11 <- ggplot(diamonds, aes(x=carat, y=price, color=cut)) + geom_point()'
+  - id: 33
+    desc: 'show plot'
+    code: 'plot11'
+  - id: 34
+    desc: 'add the facet function for the fourth variable, clarity'
+    code: 'plot11 <- ggplot(diamonds, aes(x=carat, y=price, color=cut)) + geom_point() + facet_wrap(~ clarity)'
+  - id: 35
+    desc: 'show plot'
+    code: 'plot11'
+  - id: 36
+    desc: 'give the plot a title'
+    code: 'plot11 <- ggplot(diamonds, aes(x=carat, y=price, color=cut)) + geom_point() + facet_wrap(~ clarity) + ggtitle("Diamond carat, price, and cut by level of diamond clarity")'
+  - id: 37
+    desc: 'show plot'
+    code: 'plot11'
+  - id: 38
+    desc: 'save the plot as a .png in your current working directory'
+    code: 'ggsave(filename="diamonds.png", plot11)'
+  - id: 39
+    desc: 'save the plot as a .jpg in your current working directory'
+    code: 'ggsave(filename="diamonds.jpg", plot11)'
+  - id: 40
+    desc: 'save the plot as a .pdf in your current working directory'
+    code: 'ggsave(filename="diamonds.pdf", plot11)'
+  - id: 41
+    desc: 'save the plot as a .png in your current working directory'
+    code: 'ggsave(filename="diamonds.png", plot11)'
+  - id: 42
+    desc: 'save the plot as a .jpg in your current working directory'
+    code: 'ggsave(filename="diamonds.jpg", plot11)'
+  - id: 43
+    desc: 'save the plot as a .pdf in your current working directory'
+    code: 'ggsave(filename="diamonds.pdf", plot11)'
+'stats':
+  - id: 1
+    desc: 'load the dataset called mtcars into your current workspace (it comes with R by default)'
+    code: 'data("mtcars")'
+  - id: 2
+    desc: 'show the first few lines of mtcars data'
+    code: 'head(mtcars)'
+  - id: 3
+    desc: 'view the mtcars data'
+    code: 'View(mtcars)'
+  - id: 4
+    desc: 'show the documentation for the mtcars data'
+    code: 'help(mtcars)'
+  - id: 5
+    desc: 'summarize the mtcars data'
+    code: 'summary(mtcars)'
+  - id: 6
+    desc: 'access a single column of data, the mpg column'
+    code: 'mtcars$mpg'
+  - id: 7
+    desc: 'access a single column of data, the wt column'
+    code: 'mtcars$wt'
+  - id: 8
+    desc: 'perform a T-test comparing two variables<br>the tilde "~" means "explained by", so the following tests for an explanation of mpg by the car transmission type'
+    code: 't.test(mpg ~ am, data=mtcars)'
+  - id: 9
+    desc: 'assign the T-test result into a variable'
+    code: 'tt = t.test(mpg ~ am, data=mtcars)'
+  - id: 10
+    desc: 'show the T-test on demand'
+    code: 'tt'
+  - id: 11
+    desc: 'extract only the p-value'
+    code: 'tt$p.value'
+  - id: 12
+    desc: 'extract only the confidence interval'
+    code: 'tt$conf.int'
+  - id: 13
+    desc: 'perform a correlation test over two variables, mpg and wt'
+    code: 'cor.test(mtcars$mpg, mtcars$wt)'
+  - id: 14
+    desc: 'assign the correlation test result into a variable'
+    code: 'ct = cor.test(mtcars$mpg, mtcars$wt)'
+  - id: 15
+    desc: 'show the correlation test on demand'
+    code: 'ct'
+  - id: 16
+    desc: 'extract only the p-value'
+    code: 'ct$p.value'
+  - id: 17
+    desc: 'extract only the estimate'
+    code: 'ct$estimate'
+  - id: 18
+    desc: 'extract only the confidence interval'
+    code: 'ct$conf.int'
+  - id: 19
+    desc: 'create a linear model showing mpg explained by wt'
+    code: 'fit = lm(mpg ~ wt, mtcars)'
+  - id: 20
+    desc: 'summarize the fit'
+    code: 'summary(fit)'
+  - id: 21
+    desc: 'extract the matrix of coefficients'
+    code: 'coef(summary(fit))'
+  - id: 22
+    desc: 'extract just the estimates of the matrix'
+    code: 'co = coef(summary(fit))'
+  - id: 23
+    desc: 'get the first column'
+    code: 'co[, 1]'
+  - id: 24
+    desc: 'get the fourth column'
+    code: 'co[, 4]'
+  - id: 25
+    desc: 'use the predict function for our existing cars'
+    code: 'predict(fit)'
+  - id: 26
+    desc: 'predict for a car at 4500 pounds<br>summarize the fit'
+    code: 'summary(fit)'
+  - id: 27
+    desc: 'add together the intercept term (37.2851) and the weight coefficient<br>(-5.3445) times our new weight, which is 4.5 thousands of pounds'
+    code: '37.2851 + (-5.3445) * 4.5'
+  - id: 28
+    desc: 'use the built in predict function to get same answer as above<br>create a data frame containing the predictors we wish to use (4500 lbs)'
+    code: 'newcar = data.frame(wt=4.5)'
+  - id: 29
+    desc: 'pass the predict function the new data frame'
+    code: 'predict(fit, newcar)'
+  - id: 30
+    desc: 'plot out the linear model with a smoothing curve'
+    code: 'plot12 <- ggplot(mtcars, aes(wt, mpg)) + geom_point() + geom_smooth(method="lm") + ggtitle("Linear model of the relationship between a car weight and efficiency")'
+  - id: 31
+    desc: 'show plot'
+    code: 'plot12'
+  - id: 32
+    desc: 'save the plot as a .png in your current working directory'
+    code: 'ggsave(filename="cars.png", plot12)'
+'load':
+  - id: 1
+    desc: 'Excel<br>install the gdata library'
+    code: 'install.packages("gdata")'
+  - id: 2
+    desc: 'load gdata library'
+    code: 'library("gdata")'
+  - id: 3
+    desc: 'show documentation for reading Excel with foreign library'
+    code: 'help(read.xls)'
+  - id: 4
+    desc: 'read first worksheet of Excel file into variable excelData'
+    code: 'excelData <- read.xls("Desktop/data.xlsx")'
+  - id: 5
+    desc: 'view excelData'
+    code: 'View(excelData)'
+  - id: 6
+    desc: 'SPSS data<br>load the built-in foreign library'
+    code: 'library(foreign)'
+  - id: 7
+    desc: 'show documentation for reading SPSS with foreign library'
+    code: 'help(read.spss)'
+  - id: 8
+    desc: 'load SPSS file into SPSSdata variable'
+    code: 'SPSSdata = read.spss("Downloads/Robbery Incident.sav", to.data.frame=TRUE)'
+  - id: 9
+    desc: 'view SPSSdata'
+    code: 'View(SPSSdata)'
+  - id: 10
+    desc: 'CSV data from web<br>show documentation for reading table data with the built-in read.csv function'
+    code: 'help(read.csv)'
+  - id: 11
+    desc: 'load online csv file into webCSV variable<br>lets find a CSV file online together and copy the URL to the command below'
+    code: 'webCSV <- read.csv("https://raw.githubusercontent.com/BobAdamsEE/SouthParkData/master/Season-11.csv")'
+  - id: 12
+    desc: 'view webCSV'
+    code: 'View(webCSV)'

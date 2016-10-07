@@ -1,0 +1,11 @@
+<li class="mb4 ml2">
+          <p>{{ command.desc }}</p>
+          <div class="flex flex-center">
+            <button data-clipboard-target="#{% if page.title == "visual" %}v{% elsif page.title == "stats" %}s{% elsif page.title == "load" %}l{% endif %}-{{ command.id }}" class="btn btn-outline mr2" title="click to copy code">
+              <img src="img/clippy.svg" width="15" alt="clipboard"/>
+            </button>
+            <code id="{% if page.title == "visual" %}v{% elsif page.title == "stats" %}s{% elsif page.title == "load" %}l{% endif %}-{{ command.id }}" class="prettyprint lang-r px2 bg-silver overflow-scroll" style="width: 650px; padding-top: 1rem; width: 100%">
+              <pre>{{ command.code }}</pre>
+            </code>
+          </div>
+        </li>
