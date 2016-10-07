@@ -1,4 +1,4 @@
-.hover-dim:hover { box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0625); }
+.hover-dim:hover { box-shadow: inset 0 0 0 20rem rgba(0,0,0,.0325); }
       .hover-text-decoration-none:hover { text-decoration: none; }
       .cursor-def { cursor: default; }
       .overflow-scroll { overflow:scroll; }
