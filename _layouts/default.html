@@ -26,9 +26,9 @@
 
       <h1>{{ site.title }}</h1>
       <nav class="flex center bg-silver rounded">
-        <a href="" class="flex-auto py1 hover-text-decoration-none rounded-left {% if page.name == "visual" %}bg-blue white{% else %}hover-blue{% endif %}">Visual</a>
-        <a href="" class="flex-auto py1 hover-text-decoration-none {% if page.name == "stats" %}bg-blue white{% else %}hover-blue{% endif %}">Statistical</a>
-        <a href="" class="flex-auto py1 hover-text-decoration-none rounded-right {% if page.name == "load" %}bg-blue white{% else %}hover-blue{% endif %}">Load External Data</a>
+        <a href="index.html" class="flex-auto py1 hover-text-decoration-none rounded-left {% if page.title == "visual" %}bg-blue white {% else %}hover-blue{% endif %}">Visual</a>
+        <a href="stats.html" class="flex-auto py1 hover-text-decoration-none {% if page.title == "stats" %}bg-blue white{% else %}hover-blue{% endif %}">Statistical</a>
+        <a href="load.html" class="flex-auto py1 hover-text-decoration-none rounded-right {% if page.title == "load" %}bg-blue white{% else %}hover-blue{% endif %}">Load External Data</a>
       </nav>
       <hr>
 
