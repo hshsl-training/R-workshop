@@ -5,3 +5,8 @@
       .border-blue { border:1px solid #0074d9; }
       .x-group-item { margin-left: -1px; }
       .justify-center { justify-content: center; }
+      @media (min-width:52em) {
+        .after-analysis::after {
+          content: ' Analysis';
+        }
+      }
